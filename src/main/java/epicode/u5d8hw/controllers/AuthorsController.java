@@ -46,4 +46,10 @@ public class AuthorsController {
         authorsService.findByIdAndDelete(authorId);
     }
 
+    @PutMapping("/{authorId}/avatar")
+    public Author updateAvatar(@PathVariable int authorId, @RequestParam String avatarUrl) {
+        return authorsService.updateAvatar(authorId, avatarUrl);
+    }
+
+
 }

@@ -50,4 +50,10 @@ public class AuthorsService {
         found.setAvatar(body.getAvatar());
         return authorsRepository.save(found);
     }
+
+    public Author updateAvatar(int authorId, String avatarUrl) {
+        Author author = findById(authorId);
+        author.setAvatar(avatarUrl);
+        return authorsRepository.save(author);
+    }
 }
